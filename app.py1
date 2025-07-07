@@ -1,0 +1,52 @@
+import streamlit as st
+
+st.title("Daily Exam Operations Entry Form")
+
+# Date and Day inputs
+date = st.date_input("Date")
+day = st.text_input("Day")
+weekend = st.checkbox("Weekend")
+
+# Fields based on your list
+cmr_am_release = st.text_input("CMR team AM CM release reporting at 6.30 am")
+ielts_team_member = st.text_input("Team member responsible for IELTS/School/EP CM collection and data transfer at Transit Room")
+td_am_release = st.text_input("TD team AM CM release reporting at 6.30 am")
+td_pm_receive = st.text_input("TD team AM CM Receive reporting at 2.00 pm")
+td_bag_staff = st.text_input("TD Staff name for bag receive and bag pack for next day")
+ielts_osm_scanning = st.text_input("IELTS OSM scanning/Shredding/ATRF/TRF Print")
+ielts_cm_sorting = st.text_input("IELTS CM sorting for following day")
+school_ep_cm_sorting = st.text_input("School/EP CM sorting for following day")
+back_office_staff = st.text_input("Back office support staff for venue sorting")
+school_ep_script_group1 = st.text_input("School/EP exam script despatch (Group 1)")
+school_ep_script_group2 = st.text_input("School/EP exam script despatch (Group 2)")
+ielts_qp_sorting = st.text_input("Team member for IELTS QP sorting and seals check A/Initial sorting")
+ielts_score_1st_entry = st.text_input("IELTS score 1st entry + amendment + Recording upload, Pic upload")
+ielts_score_2nd_entry = st.text_input("IELTS score 2nd entry + jagged run and upload/IOC power BI check")
+ielts_result_status = st.text_input("IELTS result status check and publish")
+remark = st.text_area("Remark")
+
+# Submit button
+if st.button("Submit"):
+    st.success("Data submitted successfully!")
+    st.write("Here is your submitted data:")
+    st.write({
+        "Date": str(date),
+        "Day": day,
+        "Weekend": weekend,
+        "CMR AM Release": cmr_am_release,
+        "IELTS Team Member": ielts_team_member,
+        "TD AM Release": td_am_release,
+        "TD PM Receive": td_pm_receive,
+        "TD Bag Staff": td_bag_staff,
+        "IELTS OSM Scanning": ielts_osm_scanning,
+        "IELTS CM Sorting": ielts_cm_sorting,
+        "School/EP CM Sorting": school_ep_cm_sorting,
+        "Back Office Staff": back_office_staff,
+        "School/EP Script Despatch Group 1": school_ep_script_group1,
+        "School/EP Script Despatch Group 2": school_ep_script_group2,
+        "IELTS QP Sorting": ielts_qp_sorting,
+        "IELTS Score 1st Entry": ielts_score_1st_entry,
+        "IELTS Score 2nd Entry": ielts_score_2nd_entry,
+        "IELTS Result Status": ielts_result_status,
+        "Remark": remark
+    })
